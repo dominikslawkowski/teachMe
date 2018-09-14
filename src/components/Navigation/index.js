@@ -8,7 +8,11 @@ export class Navigation extends React.Component {
         return(
             <StyledMenu inverted>
                 <Menu.Item>
-                    <Logo>teachMe</Logo>
+                <Link to="/">
+                    <Logo>
+                        teachMe
+                    </Logo>
+                </Link>
                 </Menu.Item>
                 <Dropdown text='Menu' pointing='right' className='link item'>
                     <Dropdown.Menu>

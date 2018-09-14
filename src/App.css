@@ -1,8 +1,12 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: #363636;
+  background-color: #ffffff;
+  /* background: url("./bcg.png");
+  background-size: 100% 100%; */
 }
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .App {
   text-align: center;
