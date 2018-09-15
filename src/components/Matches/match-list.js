@@ -6,13 +6,7 @@ export default class MatchList extends React.Component {
   render() {
 
     return (
-      // <Table className='tabela'>
-      //   <Table.Body className='tabelaBody'>
-
           <MatchListItem />
-    );
-        {/* </Table.Body>
-      </Table> */}
-    
+    );   
   }
 }

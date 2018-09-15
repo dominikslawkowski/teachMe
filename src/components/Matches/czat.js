@@ -2,13 +2,16 @@ import React from "react";
 import { Message } from "semantic-ui-react";
 import { Input } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faAngleDoubleRight);
 
 export default class Czat extends React.Component {
   render() {
     return (
       <div className="czat">
-        {/* <div>chat</div> */}
-
         {this.props.messages.map(item => (
         item.idAccount === this.props.user.id ?
         <Message color="gray" className="wychodzaca">
@@ -22,24 +25,9 @@ export default class Czat extends React.Component {
         }</Message> : null
         ))}
 
-        {/* {this.props.messages.map(item => (
-        item.idAccount === this.props.selectedSegment ?
-        <Message color="gray" className="przychodzaca">
-        {
-            item.value
-        }</Message> : null
-        ))} */}
-
-        {/* <Message color="blue" className="wychodzaca">
-          Blue
-        </Message>
-        <Message color="gray" className="przychodzaca">
-          Gray
-        </Message> */}
-
         <div className="wpisywanie">
           <Input className="wpisz" placeholder="Wpisz wiadomość" />
-          <Button className="wyslij">Wyślij</Button>
+          <Button className="wyslij"><FontAwesomeIcon icon="angle-double-right" /></Button>
         </div>
       </div>
     );
