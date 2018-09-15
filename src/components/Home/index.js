@@ -5,6 +5,9 @@ import MainTilt from './MainTilt/index';
 import BackTilt from './BackTilt/index';
 import {ButtonsWrapper} from './style.js';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {selectUserAction} from './../../actions/'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -78,7 +81,8 @@ class Home extends React.Component {
                 teachSkills: [],
                 learnSkills:  [],
                 ocena: 5,
-                wantMe: null
+                wantMe: null,
+                urlToImage: 0,
             },
             people: currentPersonData(),
             count: 0,
@@ -92,9 +96,6 @@ class Home extends React.Component {
         axios.get('http://localhost:62938/api/account').then(data=>{its.setState({
             people: data.data
         })});
-
-    
-  
 
     }
 
@@ -111,7 +112,7 @@ class Home extends React.Component {
         console.log('akceptuję');
     
     
-
+        this.props.selectHim(this.state.currentPerson);
         this.animatePersona();
     }
 
@@ -185,4 +186,11 @@ class Home extends React.Component {
         )
     }
 }
-export default Home;
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        selectHim: selectUserAction
+    },dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(Home);
