@@ -1,7 +1,6 @@
 import React from 'react';
 import {Card, Button} from 'semantic-ui-react';
 import {HomeWrapper} from './style.js';
-import {Imag} from './style.js';
 import MainTilt from './MainTilt/index';
 import BackTilt from './BackTilt/index';
 import {ButtonsWrapper} from './style.js';
@@ -76,21 +75,21 @@ class Home extends React.Component {
                 surname: 'Nazwisko',
                 age: '36',
                 description: 'opis mmnie i tak dalej.Jestem super gosć, w ogole cie naucze gitary i innych.opis mmnie i tak dalej.Jestem super gosć, w ogole cie naucze gitary i innych.opis mmnie i tak dalej.Jestem super gosć, w ogole cie naucze gitary i innych.',
-                teachSkills: [{id:123, name: 'biologia'}, {id:124, name: 'matma'}, {id:125, name: 'fizyka'}, {id:126, name: 'biologia'}, {id:127, name: 'nocne kodowanie'}],
-                learnSkills:  [{id:123, name: 'muzyka'}, {id:124, name: 'gitara'}, {id:125, name: 'arts&crafts'}, {id:126, name: 'biologia'}, {id:127, name: 'bolimienoga'}],
+                teachSkills: [],
+                learnSkills:  [],
                 ocena: 5,
                 wantMe: null
             },
-            people: null /*currentPersonData(),*/,
+            people: currentPersonData(),
             count: 0,
         };
-        this.sendRequest();
+        //this.sendRequest();
     }
 
     sendRequest(){
         let its = this;
         axios.get('http://localhost:62938/api/account').then(data=>{its.setState({
-            people: data
+            people: data.data
         })});
     }
 
@@ -128,7 +127,7 @@ class Home extends React.Component {
         setTimeout(
             function(){
                 let leng = its.state.people.length;
-                let x;
+                var x;
                 if (its.state.count<leng-1){
                     x=its.state.count;
                 } else {
@@ -142,8 +141,8 @@ class Home extends React.Component {
                     count: its.state.count + 1
                 })
                 mainTilt.classList.remove('animate-this');
-               backA.classList.remove('animate-this_back-tilt');
-               backB.classList.remove('animate-this_back-tilt');
+                backA.classList.remove('animate-this_back-tilt');
+                backB.classList.remove('animate-this_back-tilt');
 
             },300
         )       

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Image, Icon} from 'semantic-ui-react';
+import {Card, Icon} from 'semantic-ui-react';
 import {Imag} from './style.js';
 import {Wrapper} from './style.js';
 
@@ -10,7 +10,7 @@ class MainTilt extends React.Component {
         var gwiazdy=[];
         if (x>0){
             for (let i = 0; i < ocena; i++) {
-                gwiazdy.push(<Icon name='star' />)
+                gwiazdy.push(<Icon name='star' key={i} />)
             }
         }
         return gwiazdy;
@@ -26,14 +26,14 @@ class MainTilt extends React.Component {
     }
 
     displayOffer() {
-        return this.props.theUserData.teachSkills.map((item) => {
-            return <div className={"maciek-middle_tag-itself1"}>{item.name}</div>
+        return this.props.theUserData.teachSkills.map((item, id) => {
+            return <div key={id} className={"maciek-middle_tag-itself1"}>{item.name}</div>
         });
     }
 
     displaySearch() {
-        return this.props.theUserData.learnSkills.map((item) => {
-            return <div className={"maciek-middle_tag-itself2"}>{item.name}</div>
+        return this.props.theUserData.learnSkills.map((item, idx) => {
+            return <div key={idx} className={"maciek-middle_tag-itself2"}>{item.name}</div>
         });
     }
 
@@ -42,7 +42,7 @@ class MainTilt extends React.Component {
     }
 
     displayAge() {
-        return this.props.theUserData.age+' '+'l.'
+        return this.props.theUserData.age+' l.';
     }
 
     displayDescription() {
@@ -51,7 +51,7 @@ class MainTilt extends React.Component {
     
     render () {
         return (
-            <Wrapper className={'maciek-middle' + ' ' +this.props.className}>
+            <Wrapper className={'maciek-middle ' +this.props.className}>
                 <div className="maciek-middle_head-wrapper">
                     <Imag className="maciek-middle_image" imageUrl={'https://react.semantic-ui.com/images/avatar/large/matthew.png'}/>
                     <div className="maciek-middle_head">

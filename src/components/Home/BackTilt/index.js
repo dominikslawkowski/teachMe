@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Icon} from 'semantic-ui-react';
+import {Card} from 'semantic-ui-react';
 
 
 class BackTilt extends React.Component {
@@ -9,7 +9,7 @@ class BackTilt extends React.Component {
         return tab[x];
     }
     pseudoAd() {
-        const tab = ['Twój uczeń?', 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie',, 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie'];
+        const tab = ['Twój uczeń?', 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie', 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie'];
         let x = Math.floor((Math.random() * 10));
         return tab[x];
     }

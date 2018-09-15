@@ -1,13 +1,10 @@
 import React from 'react';
 import Tags from './tags.js';
 import Czat from './czat.js';
-import {Segment, Button} from 'semantic-ui-react';
+import {Segment} from 'semantic-ui-react';
 
 export default class Slider extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
+ 
     render() {
 
         return(

@@ -40,6 +40,16 @@ export const LoginButon = styled(Button)`
     width: 200px;
     height: 40px;
     justify-self: center;
+    &.ui.primary.button, &.ui.inverted.blue.buttons.button {
+        -webkit-box-shadow: 0 0 0 2px #555 inset!important; 
+        box-shadow: 0 0 0 2px #555 inset!important;
+        background: rgba(0,0,0,0.6);
+        &:hover{
+            background: rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 0 0 2px rgba(0,0,0,0.2) inset!important; 
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.2) inset!important;
+        }
+    }
 `;
 
 export const Logo = styled.span`

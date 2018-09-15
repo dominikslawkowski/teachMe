@@ -37,4 +37,13 @@ export const StyledButton = styled(Button)`
     height: 40px;
     color: black;
     transition: all .1s linear;
+    &.ui.inverted.blue.button, &.ui.inverted.blue.buttons.button {
+        -webkit-box-shadow: 0 0 0 2px #333 inset!important; 
+        box-shadow: 0 0 0 2px #333 inset!important;
+        &:hover{
+            background: rgba(0,0,0,0.2);
+            -webkit-box-shadow: 0 0 0 2px rgba(0,0,0,0.2) inset!important; 
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.2) inset!important;
+        }
+    }
 `;

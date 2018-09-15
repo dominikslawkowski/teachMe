@@ -1,11 +1,10 @@
 import React from "react";
 import { Table, Segment } from "semantic-ui-react";
 import Slider from "./slider.js";
-import Tags from "./tags.js";
 
 export default class MatchListItem extends React.Component {
   constructor(props) {
-    super(props),
+    super(props);
 
     this.state = {
         data: [
@@ -13,7 +12,7 @@ export default class MatchListItem extends React.Component {
                 id: 0,
                 imie: "Adam",
                 zdjecie: (
-                  <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
+                  <img alt='' src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),
                 wiek: "22",
                 skills : [
@@ -26,7 +25,7 @@ export default class MatchListItem extends React.Component {
                 id: 1,
                 imie: "Maciek",
                 zdjecie: (
-                  <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
+                  <img alt='' src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),
                 wiek: "23",
                 skills : [
@@ -39,7 +38,7 @@ export default class MatchListItem extends React.Component {
                 id: 2,
                 imie: "Michał",
                 zdjecie: (
-                  <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
+                  <img alt='' src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),
                 wiek: "26",
                 skills : [
@@ -79,7 +78,7 @@ export default class MatchListItem extends React.Component {
             id: 1,
                 imie: "maciek",
                 zdjecie: (
-                  <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
+                  <img alt='' src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),
                 wiek: "23",
                 skills : [

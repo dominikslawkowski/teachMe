@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Container, InputEmail, InputPassword, LoginButon, Logo } from './style';
-import { Label } from 'semantic-ui-react';
 
 export class Login extends React.Component {
 
