@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import { Navigation, Welcome, Login } from './components/index';
+import Maches from './components/Matches/index.js';
 
 class App extends Component {
   render() {
@@ -14,8 +15,8 @@ class App extends Component {
               <Route path="/logowanie" component={Login} />  
                 {/* 
                 <Route path="/główna" component={Home} />
-                <Route path="/profil" component={User} />
-                <Route path="/pary" component={Maches} />                */}
+                <Route path="/profil" component={User} /> */}
+                <Route path="/pary" component={Maches} />               
               </div>
         </div>
       </Router>
