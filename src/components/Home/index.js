@@ -78,7 +78,8 @@ class Home extends React.Component {
                 teachSkills: [],
                 learnSkills:  [],
                 ocena: 5,
-                wantMe: null
+                wantMe: null,
+                urlToImage: 0,
             },
             people: currentPersonData(),
             count: 0,

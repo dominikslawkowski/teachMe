@@ -48,12 +48,21 @@ class MainTilt extends React.Component {
     displayDescription() {
         return this.props.theUserData.description;
     }
+
+    pseudoImgUrl(x){
+        x=x?1:0;
+        let tab = [
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png'
+        ]
+        return tab[x];
+    }
     
     render () {
         return (
             <Wrapper className={'maciek-middle ' +this.props.className}>
                 <div className="maciek-middle_head-wrapper">
-                    <Imag className="maciek-middle_image" imageUrl={'https://react.semantic-ui.com/images/avatar/large/matthew.png'}/>
+                    <Imag className="maciek-middle_image" imageUrl={this.pseudoImgUrl(this.props.urlToImage)}/>
                     <div className="maciek-middle_head">
                         <div className="maciek-middle_head_im-naz">
                             <p>{this.displayName()}</p>
@@ -83,4 +92,5 @@ class MainTilt extends React.Component {
         )
     }
 }
+
 export default MainTilt;

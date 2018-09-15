@@ -9,14 +9,33 @@ class BackTilt extends React.Component {
         return tab[x];
     }
     pseudoAd() {
-        const tab = ['Twój uczeń?', 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie', 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie'];
+        const tab = ['Twój uczeń?', 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie',, 'Twój nauczyciel?', 'Wymiana wiedzy?', 'Zróbmy projekt!', 'Szukam kogoś, kto mi wytłumaczy...', 'Uczę: siebie/ciebie'];
         let x = Math.floor((Math.random() * 10));
         return tab[x];
+    }
+    pseudoImgUrl(){
+        let tab = [
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png',
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png',
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png',
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png',
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png',
+            'https://react.semantic-ui.com/images/avatar/large/matthew.png',
+            'https://react.semantic-ui.com/images/avatar/large/rachel.png',
+        ]
+        let z = Math.floor(Math.random()*10);
+        return tab[z];
+        
     }
     render () {
         return(
             <Card className = {this.props.className}
-                image='https://react.semantic-ui.com/images/avatar/large/matthew.png'
+                image={this.pseudoImgUrl()}
                 header={this.pseudoAd()}
                 meta={this.pseudoName()}
                 description='Sprawdź ich wszystkich'
