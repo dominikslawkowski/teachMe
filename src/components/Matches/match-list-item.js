@@ -11,7 +11,7 @@ export default class MatchListItem extends React.Component {
         data: [
             {
                 id: 0,
-                imie: "adam",
+                imie: "Adam",
                 zdjecie: (
                   <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),
@@ -24,7 +24,7 @@ export default class MatchListItem extends React.Component {
               },
               {
                 id: 1,
-                imie: "maciek",
+                imie: "Maciek",
                 zdjecie: (
                   <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),
@@ -37,7 +37,7 @@ export default class MatchListItem extends React.Component {
               },
               {
                 id: 2,
-                imie: "michal",
+                imie: "Michał",
                 zdjecie: (
                   <img src="https://pbs.twimg.com/profile_images/960347893914898432/H0tA4G8k_400x400.jpg" />
                 ),

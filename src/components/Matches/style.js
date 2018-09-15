@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MatchesWrapper = styled.div`
   text-align: center;
-  width: 90vw;
+  width: 75vw;
   /* height: 100vh;  */
   background-color: #999;
   box-sizing:border-box;
@@ -22,28 +22,29 @@ export const MatchesWrapper = styled.div`
     text-align: center;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 7fr 1fr;
+    grid-template-columns: 1fr 7fr 2fr;
     cursor: pointer;
     padding-left: 10px;
     padding-right: 10px;
     margin: 0;
     width: 100%;
-    background-color: #999;
+    background-color: #323334;
+    color: white;
+    animation: roll 500ms;
   }
 
   .line: hover {
-    background-color: #ccc;
+    background-color: rgba(255,255,255,0.005)
   }
 
   .line td {
     padding: 5px;
     font-size: 26px;
     padding: auto;
-    align-items: center;
   }
 
   .line td img {
-    width: 75%;
+    width: 60%;
     border-radius: 50%;
     -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.38);
     -moz-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.38);
@@ -61,6 +62,14 @@ export const MatchesWrapper = styled.div`
     grid-gap: 10px;
     /* display: none; */
     background-color: #888;
+    animation: roll 500ms;
+    overflow: hidden;
+
+
+    @keyframes roll {
+    from {height: 0;}
+    to {height: 95%;}
+}
   }
 
   .line .slider div {
@@ -70,7 +79,7 @@ export const MatchesWrapper = styled.div`
   }
 
 .tagi {
-  background-color: #eee;
+  background-color: #656667;
     border-radius: 5px;
 
 }
@@ -78,7 +87,7 @@ export const MatchesWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     border: 1px solid #rgba(0, 0, 0, 0.38);
-    background-color: #eee;
+    background-color: #656667;
     border-radius: 5px;
   }
 
@@ -106,10 +115,12 @@ export const MatchesWrapper = styled.div`
   .wyslij {
     height: fit-content;
     margin-top: 12px;
+    min-width: 0;
   }
 
   .wpisz {
-    margin: 0
+    margin: 0;
+    min-width: 0;
   }
 
    .topline {
@@ -124,7 +135,6 @@ export const MatchesWrapper = styled.div`
 
   .imie {
     text-align: left  ;
-    padding-top: 1999990px;
     letter-spacing: 2px;  
   }
 

@@ -15,7 +15,6 @@ export default class Slider extends React.Component {
             <Segment className="slider">
                 <Tags data={this.props.data}/>
                 <Czat messages={this.props.messages} user={this.props.user} selectedSegment={this.props.selectedSegment}/>
-              {/* <div className="czat">CHAT</div> */}
             </Segment> : null
         );
     }
