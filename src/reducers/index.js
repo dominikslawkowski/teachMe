@@ -5,8 +5,7 @@ import usersReducer from './reducer_users';
 
 const teachMe = combineReducers({
   user: userReducer,
-  selectedUser: selectedUserReducer,
-  users: usersReducer,
+  //selectedUser: selectedUserReducer,
+  //users: usersReducer,
 });
-  
   export default teachMe;
