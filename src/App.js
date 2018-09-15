@@ -17,7 +17,7 @@ class App extends Component {
               <Route exact path="/" component={Welcome} />
               <Route path="/logowanie" component={Login} />  
               <Route path="/główna" component={Home} />
-                {/* <Route path="/profil" component={User} />*/}
+                <Route path="/profil" component={User} />
               <Route path="/pary" component={Maches} />                
               </div>
         </div>
