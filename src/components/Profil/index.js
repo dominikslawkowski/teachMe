@@ -15,21 +15,47 @@ import {
 
 import { know } from './value';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import Axios from 'axios';
+import { learn } from '../../actions/index';
+import { bindActionCreators } from 'redux';
 
-export class Profil extends React.Component{
+class Profil extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
+            thisUser: props.user,
             name: null,
             surname: null,
             age: 0,
             description: null,
             submited: false,
-            selectedKnow: null,
-            selectedLearn: null,
+            selectedKnow: [],
+            selectedLearn: [],
             correct: false
         }
+        console.log(props.user);
+        }
+
+    goToProfile = () => this.props.history.push('/główna');
+
+    putData = () => {
+        this.setState({submited: true});
+        let its = this;
+        Axios.put(`http://localhost:62938/api/account/update/${this.state.thisUser}`, {
+            "Name": this.state.name,
+            "Surname": this.state.surname,
+            "Description": this.state.description,
+            "Age": this.state.age,
+            "TeachSkills": this.state.selectedKnow,
+            "LearnSkills": this.state.selectedLearn
+        }).then(function () {
+            its.goToProfile();
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
     }
 
     nameHandleChange = name => {
@@ -54,18 +80,21 @@ export class Profil extends React.Component{
     };
 
     selectedLearnHandleChange = select => {
-        this.setState({ selectedLearn: select });
+        this.props.learn([{"Name":select}]);
+        this.setState({ selectedLearn: [{"Name":select}] });
         console.log(select);
     }
 
     selectedKnowHandleChange = select => {
-        this.setState({ selectedKnow: select });
+        this.setState({ selectedKnow: [{"Name":select}] });
         console.log(select);
     }
 
     change = (event) =>{
         this.setState({selectedKnow: event.target.value});
     }
+
+
 
     render(){
         return( 
@@ -80,7 +109,7 @@ export class Profil extends React.Component{
                     <StyledForm>
                         <StyledTextArea placeholder="Opis" onChange={event => this.descHandleChange(event.target.value)} error={(this.state.submited && !this.state.description) ? true : undefined }/>
                     </StyledForm>
-                    <SubmitButon onClick={()=>this.setState({submited: true})}>
+                    <SubmitButon onClick={()=> this.putData()}>
                         <Link 
                             to={this.state.correct ? "/główna" : "/profil"}
                             style={{display: 'block', height: '100%', color: 'white'}} 
@@ -91,3 +120,18 @@ export class Profil extends React.Component{
         );
     }
 }; 
+
+function mapStateToProps(state){
+    console.log(state.user);
+    return{
+        user: state.user
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+       learn: learn,
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profil);

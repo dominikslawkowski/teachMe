@@ -87,10 +87,15 @@ class Home extends React.Component {
     }
 
     sendRequest(){
+
         let its = this;
         axios.get('http://localhost:62938/api/account').then(data=>{its.setState({
             people: data.data
         })});
+
+    
+  
+
     }
 
     manageClickEv(e){
