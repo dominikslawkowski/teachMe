@@ -78,11 +78,20 @@ class Home extends React.Component {
                 description: 'opis mmnie i tak dalej.Jestem super gosć, w ogole cie naucze gitary i innych.opis mmnie i tak dalej.Jestem super gosć, w ogole cie naucze gitary i innych.opis mmnie i tak dalej.Jestem super gosć, w ogole cie naucze gitary i innych.',
                 teachSkills: [{id:123, name: 'biologia'}, {id:124, name: 'matma'}, {id:125, name: 'fizyka'}, {id:126, name: 'biologia'}, {id:127, name: 'nocne kodowanie'}],
                 learnSkills:  [{id:123, name: 'muzyka'}, {id:124, name: 'gitara'}, {id:125, name: 'arts&crafts'}, {id:126, name: 'biologia'}, {id:127, name: 'bolimienoga'}],
-                ocena: 5
+                ocena: 5,
+                wantMe: null
             },
-            people: currentPersonData(),
-            count: 0
-        }
+            people: null /*currentPersonData(),*/,
+            count: 0,
+        };
+        this.sendRequest();
+    }
+
+    sendRequest(){
+        let its = this;
+        axios.get('http://localhost:62938/api/account').then(data=>{its.setState({
+            people: data
+        })});
     }
 
     manageClickEv(e){
@@ -96,6 +105,9 @@ class Home extends React.Component {
 
     acceptPersona(){
         console.log('akceptuję');
+    
+    
+
         this.animatePersona();
     }
 
