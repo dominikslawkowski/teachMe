@@ -1,9 +1,11 @@
 import React from "react";
 import {MatchesWrapper} from './style.js';
 import MatchList from "./match-list.js";
+import {connect} from 'react-redux';
 
-export default class Matches extends React.Component {
+class Matches extends React.Component {
  render() {
+     console.log(this.props.matched)
  return (
  <MatchesWrapper>
      <MatchList></MatchList>
@@ -11,3 +13,9 @@ export default class Matches extends React.Component {
  );
  }
 }
+function mapStateToProps(state){
+    return {
+        matched: state.selectedUser
+    }
+}
+export default connect(mapStateToProps)(Matches);
