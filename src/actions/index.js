@@ -11,3 +11,9 @@ export const selectUserAction = (obj) => {
         payload: obj
     }
 }
+export const learn = (skill) => {
+    return{
+        type: 'LEARN',
+        payload: skill
+    }
+}

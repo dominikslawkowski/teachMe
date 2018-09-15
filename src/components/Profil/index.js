@@ -17,6 +17,8 @@ import { know } from './value';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import Axios from 'axios';
+import { learn } from '../../actions/index';
+import { bindActionCreators } from 'redux';
 
 class Profil extends React.Component{
 
@@ -78,6 +80,7 @@ class Profil extends React.Component{
     };
 
     selectedLearnHandleChange = select => {
+        this.props.learn([{"Name":select}]);
         this.setState({ selectedLearn: [{"Name":select}] });
         console.log(select);
     }
@@ -125,4 +128,10 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(Profil);
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+       learn: learn,
+    }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profil);
