@@ -4,8 +4,6 @@ export const HomeWrapper = styled.div`
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background: #fff;
-    background: rgba(27, 28, 29, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
