@@ -3,11 +3,16 @@ body{
   padding: 0;
   background-color: #ffffff;
   /* background: url("./bcg.png");
+
   background-size: 100% 100%; */
+   background: rgba(27, 28, 29, 0.1);
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .App {
   text-align: center;
+}
+* {
+  box-sizing: border-box;
 }
