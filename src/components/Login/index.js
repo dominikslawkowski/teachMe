@@ -34,7 +34,9 @@ class Login extends React.Component {
     };
 
     submitValidation = () => {
-         if((this.state.email !== null) && (this.state.password !== null)) this.setState({correct: true});
+         if((this.state.email !== null) && (this.state.password !== null)) 
+            this.setState({correct: true});
+                
     };
 
     sendLogin = () => {
