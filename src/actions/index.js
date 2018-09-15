@@ -4,3 +4,10 @@ export const currentUser = (id) => {
         payload: id
         }
 }
+
+export const learn = (skill) => {
+    return{
+        type: 'LEARN',
+        payload: skill
+        }
+}
